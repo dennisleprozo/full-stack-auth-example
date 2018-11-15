@@ -2,7 +2,6 @@
   "name": "react-node-auth-db",
   "version": "0.1.0",
   "private": true,
-  "main": "./server/index",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
@@ -14,7 +13,7 @@
     "passport-auth0": "^0.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-redux": "^5.0.6",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.1.2",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^4.3.0"
@@ -28,5 +27,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3005"
+  "main": "server/server.js",
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3005"
+    },
+    "/auth": {
+      "target": "http://localhost:3005"
+    }
+  }
 }
